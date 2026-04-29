@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NEXT DJERBA - Join the biggest technology hackathon. Compete in Solid Work, Problem Solving, and Green Entrepreneurial challenges. Register your team now!"
+    />
+    <title>NEXT DJERBA</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="loading" data-theme="solidwork">
+    <!-- ============================================
+       LOADING SCREEN
+       ============================================ -->
+    <div id="loader">
+      <canvas id="loader-canvas"></canvas>
+      <div class="loader-content">
+        <!-- Logo with spinning energy rings -->
+        <div class="loader-logo-wrapper">
+          <div class="loader-logo-ring-3"></div>
+          <div class="loader-logo-ring-2"></div>
+          <div class="loader-logo-ring"></div>
+          <img
+            class="loader-logo"
+            src="assets/WhatsApp%20Image%202026-04-16%20at%2015.04.39.jpeg"
+            alt="Tech Battle Logo"
+          />
+        </div>
+
+        <!-- Main quote with typewriter -->
+        <div class="loader-quote">
+          Welcome to the biggest technology battle !!
+        </div>
+
+        <!-- Sub-quote that fades in later -->
+        <div class="loader-subquote">⚡ Prepare for combat ⚡</div>
+
+        <!-- Energy progress bar -->
+        <div class="loader-bar-container">
+          <div class="loader-bar" id="loader-bar"></div>
+        </div>
+        <div class="loader-percent" id="loader-percent">0%</div>
+
+        <!-- Battle status -->
+        <div class="loader-status" id="loader-status">
+          Initializing battle systems...
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+       MAIN SITE
+       ============================================ -->
+    <div id="main-site">
+      <!-- Background Canvas -->
+      <canvas id="theme-canvas"></canvas>
+
+      <!-- ========== NAVBAR / HACKATHON SELECTOR ========== -->
+      <nav class="hackathon-nav" id="main-nav">
+        <div class="container">
+          <div class="nav-inner">
+            <button
+              class="nav-btn active"
+              data-theme="solidwork"
+              id="nav-solidwork"
+            >
+              Solid Work
+            </button>
+            <button
+              class="nav-btn"
+              data-theme="problemsolving"
+              id="nav-problemsolving"
+            >
+              Problem Solving
+            </button>
+            <button class="nav-btn" data-theme="green" id="nav-green">
+              Green Entrepreneurial
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- ========== HERO SECTION ========== -->
+      <section class="hero" id="hero">
+        <div class="container">
+          <div class="hero-content" id="hero-content">
+            <!-- Dynamically rendered by theme.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== ABOUT SECTION ========== -->
+      <section class="about reveal" id="about">
+        <div class="container" id="about-content">
+          <!-- Dynamically rendered by theme.js -->
+        </div>
+      </section>
+
+      <!-- ========== MOTIVATION SECTION ========== -->
+      <section class="motivation reveal" id="motivation">
+        <div class="container" id="motivation-content">
+          <!-- Dynamically rendered by theme.js -->
+        </div>
+      </section>
+
+      <!-- ========== COUNTDOWN SECTION ========== -->
+      <section
+        class="countdown-section reveal"
+        id="countdown"
+        data-deadline="2026-05-10T12:00:00+01:00"
+      >
+        <div class="container">
+          <div class="countdown-content">
+            <div class="countdown-header">
+              <span class="section-label">Time Matters</span>
+              <h2 class="section-title">Registration Closes</h2>
+              <p class="countdown-subtitle">
+                Secure your spot before it's too late!
+              </p>
+            </div>
+            <div class="countdown-timer">
+              <div class="countdown-box">
+                <div class="countdown-value" id="days">00</div>
+                <div class="countdown-label">Days</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-value" id="hours">00</div>
+                <div class="countdown-label">Hours</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-value" id="minutes">00</div>
+                <div class="countdown-label">Minutes</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-value" id="seconds">00</div>
+                <div class="countdown-label">Seconds</div>
+              </div>
+            </div>
+            <p class="countdown-deadline" id="countdown-deadline">
+              🎯 Deadline: May 10, 2026 at 12:00 PM
+            </p>
+            <a href="#registration" class="countdown-cta"
+              >Register Your Team Now</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== EVENT OVERVIEW SECTION ========== -->
+      <section class="event-overview reveal" id="event-overview">
+        <div class="container">
+          <div class="overview-header">
+            <span class="section-label">What's Inside</span>
+            <h2 class="section-title">Event Highlights</h2>
+          </div>
+
+          <!-- Event Details Grid -->
+          <div class="event-details-grid">
+            <!-- Event Info Card 1 -->
+            <div class="event-card">
+              <div class="event-card-icon">📅</div>
+              <h3>Event Timeline</h3>
+              <p><strong>Dates:</strong> April 25-26, 2026</p>
+              <p><strong>Duration:</strong> 24 hours</p>
+              <p><strong>Location:</strong> ISET Djerba</p>
+            </div>
+
+            <!-- Event Info Card 2 -->
+            <div class="event-card">
+              <div class="event-card-icon">👥</div>
+              <h3>Participation</h3>
+              <p><strong>Teams:</strong> 3-4 participants per team</p>
+              <p><strong>Audience:</strong> ISET Djerba Students</p>
+              <p><strong>Multiple Hackathons:</strong> Choose your challenge</p>
+            </div>
+
+            <!-- Event Info Card 3 -->
+            <div class="event-card">
+              <div class="event-card-icon">🎯</div>
+              <h3>Main Objective</h3>
+              <p>
+                Foster innovation, entrepreneurship, and technical excellence
+                while solving real-world problems
+              </p>
+            </div>
+          </div>
+
+          <!-- Hackathons Section -->
+          <div class="hackathons-showcase">
+            <h3 class="showcase-title">Three Epic Hackathons</h3>
+
+            <div class="hackathon-track">
+              <div class="track-marker">1</div>
+              <div class="track-content">
+                <h4>💻 Problem Solving Hackathon</h4>
+                <p>
+                  Algorithmics, logic programming, and computational
+                  problem-solving. Organized by <strong>Move Club</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div class="hackathon-track">
+              <div class="track-marker">2</div>
+              <div class="track-content">
+                <h4>🚀 Entrepreneurship Hackathon</h4>
+                <p>
+                  <strong>Theme: "Innovate Tourism in Djerba"</strong> — Develop
+                  sustainable business solutions to develop tourism while
+                  generating positive social and economic impact. Organized by
+                  <strong>Enactus</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div class="hackathon-track">
+              <div class="track-marker">3</div>
+              <div class="track-content">
+                <h4>⚙️ SolidWorks Competition</h4>
+                <p>
+                  CAD modeling challenges with 1v1 duels. 16 individual
+                  competitors in elimination rounds. Organized by
+                  <strong>Enactus</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Schedule Preview -->
+          <div class="schedule-preview">
+            <h3 class="preview-title">Quick Schedule</h3>
+            <div class="schedule-grid">
+              <div class="schedule-item">
+                <div class="schedule-time">13:30 - 14:00</div>
+                <div class="schedule-event">Welcome & Check-in</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">14:00 - 14:30</div>
+                <div class="schedule-event">Opening Ceremony</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">15:00</div>
+                <div class="schedule-event">Hackathon Launch (24h)</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">15:30 - 19:00</div>
+                <div class="schedule-event">SolidWorks Competition</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">Sunday 15:00</div>
+                <div class="schedule-event">Hackathon Ends</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">16:30 - 18:30</div>
+                <div class="schedule-event">Team Pitches & Jury</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">19:00 - 20:00</div>
+                <div class="schedule-event">Awards Ceremony</div>
+              </div>
+              <div class="schedule-item">
+                <div class="schedule-time">19:00 - 23:00</div>
+                <div class="schedule-event">Cultural Celebration</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== PRIZES SECTION ========== -->
+      <section class="prizes reveal" id="prizes">
+        <div class="container" id="prizes-content">
+          <!-- Dynamically rendered by theme.js -->
+        </div>
+      </section>
+
+      <!-- ========== REGISTRATION SECTION ========== -->
+      <section class="registration reveal" id="registration">
+        <div class="container">
+          <div style="text-align: center; margin-bottom: 48px">
+            <span class="section-label">Join the Battle</span>
+            <h2 class="section-title">Register Your Team</h2>
+            <div class="solo-badge" id="solo-badge" style="display: none">
+              🎯 Solo Challenge — No teammates needed
+            </div>
+          </div>
+
+          <div class="form-wrapper">
+            <form id="registration-form" novalidate>
+              <!-- Team Leader Info -->
+              <div class="form-section-title">
+                <span class="section-number">1</span>
+                Team Leader Information
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fname">First Name</label>
+                  <input
+                    type="text"
+                    id="fname"
+                    name="firstName"
+                    placeholder="Your first name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="lname">Last Name</label>
+                  <input
+                    type="text"
+                    id="lname"
+                    name="lastName"
+                    placeholder="Your last name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="dept">Department</label>
+                  <select id="dept" name="department" required>
+                    <option value="">Select department</option>
+                    <option value="IT">IT</option>
+                    <option value="GE">GE</option>
+                    <option value="ME">ME</option>
+                    <option value="GES">GES</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="student-class">Class</label>
+                  <input
+                    type="text"
+                    id="student-class"
+                    name="class"
+                    placeholder="e.g. 2CP, 1CS"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="student-id">Student ID</label>
+                  <input
+                    type="text"
+                    id="student-id"
+                    name="studentId"
+                    placeholder="Your student ID"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="your.email@example.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Teammates -->
+              <div class="form-section-title">
+                <span class="section-number">2</span>
+                Teammates
+              </div>
+
+              <div id="teammates-container">
+                <!-- Teammate blocks added dynamically -->
+              </div>
+
+              <button type="button" class="add-teammate-btn" id="add-teammate">
+                + Add Teammate
+              </button>
+
+              <!-- Submit -->
+              <button type="submit" class="submit-btn" id="submit-btn">
+                Submit Registration
+              </button>
+
+              <div class="form-message" id="form-message"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SPONSORS SECTION ========== -->
+      <section class="sponsors reveal" id="sponsors">
+        <div class="container">
+          <div style="text-align: center; margin-bottom: 32px">
+            <span class="section-label">Sponsors</span>
+            <h2 class="section-title">Proud Supporters</h2>
+            <p class="section-subtitle">
+              Thanks to our partners for making this event possible.
+            </p>
+          </div>
+
+          <div class="sponsor-grid">
+            <div class="sponsor-card">
+              <div class="sponsor-logo-wrap">
+                <img src="assets\spon3.jpeg" alt="Vacancia Travel logo" />
+              </div>
+              <div class="sponsor-name">Vacancia Travel</div>
+            </div>
+
+            <div class="sponsor-card">
+              <div class="sponsor-logo-wrap">
+                <img src="assets\spon1.jpeg" alt="L BENNA Lab logo" />
+              </div>
+              <div class="sponsor-name">L BENNA Lab</div>
+            </div>
+
+            <div class="sponsor-card">
+              <div class="sponsor-logo-wrap">
+                <img src="assets\spon2.jpeg" alt="L BENNA Prod logo" />
+              </div>
+              <div class="sponsor-name">L BENNA Prod</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CONTACT SECTION ========== -->
+      <section class="contact reveal" id="contact">
+        <div class="container">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Meet our directors</p>
+          <div class="contact-grid">
+            <!-- Director 1 -->
+            <div class="director-card">
+              <div class="director-avatar">
+                <img src="assets\adem.jpeg" alt="Director 1" />
+              </div>
+              <h3 class="director-name">Ouerhani Adem</h3>
+              <p class="director-role">Co-Founder & CEO</p>
+              <p class="director-email">
+                <a href="mailto:ouerhaniadem0805@gmail.com"
+                  >ouerhaniadem0805@gmail.com</a
+                >
+              </p>
+              <p class="director-phone">
+                <a href="tel:+21629763603">+216 29 763 603</a>
+              </p>
+            </div>
+
+            <!-- Director 2 -->
+            <div class="director-card">
+              <div class="director-avatar">
+                <img src="assets\souhaib.jpeg" alt="Director 2" />
+              </div>
+              <h3 class="director-name">Souhaib Thabti</h3>
+              <p class="director-role">Co-Founder & CEO</p>
+              <p class="director-email">
+                <a href="mailto:souhaibthabti0@gmail.com"
+                  >souhaibthabti0@gmail.com</a
+                >
+              </p>
+              <p class="director-phone">
+                <a href="tel:+21693240096">+216 93 240 096</a>
+              </p>
+            </div>
+
+            <!-- Director 3 -->
+            <div class="director-card">
+              <div class="director-avatar">
+                <img src="assets\wassim.jpeg" alt="Director 3" />
+              </div>
+              <h3 class="director-name">Wassim Hichri</h3>
+              <p class="director-role">Co-Founder & CEO</p>
+              <p class="director-email">
+                <a href="mailto:wsshychry@gmail.com">wsshychry@gmail.com</a>
+              </p>
+              <p class="director-phone">
+                <a href="tel:+21658018773">+216 58 018 773</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== FOOTER ========== -->
+      <footer class="site-footer">
+        <div class="container">
+          <p>© 2026 NEXTDJERBA <span class="heart"></span>BY OADEV.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts (loaded at end for performance) -->
+    <script src="js/loader.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/countdown.js"></script>
+  </body>
+</html>
